@@ -8,6 +8,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
 
+
+## [1.0.4] - 2025-03-14
+### Added
+- Set up AWS EC2 instance (`t3.small`) for backend development.
+- Installed and configured PostgreSQL.
+- Installed Java (OpenJDK 17) for Spring Boot.
+- Installed Maven for dependency management.
+- Ensured PostgreSQL starts on boot and verified functionality.
+
 ## [1.0.4] - 2025-03-14
 ### 🛠 Backend Foundation & Database Setup
 - **Initialized Spring Boot project** in `/backend/` with Maven.
