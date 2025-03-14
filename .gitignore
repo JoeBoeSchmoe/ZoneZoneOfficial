@@ -1,29 +1,41 @@
-# Ignore build files
+# ╔════════════════════════════════════════════╗
+# ║                BUILD FILES                ║
+# ╚════════════════════════════════════════════╝
 target/
 *.jar
 *.war
 *.ear
 
-# Ignore IDE settings
+# ╔════════════════════════════════════════════╗
+# ║               IDE SETTINGS                 ║
+# ╚════════════════════════════════════════════╝
 .idea/
 .vscode/
 *.iml
 
-# Ignore Maven and Gradle cache files
+# ╔════════════════════════════════════════════╗
+# ║         MAVEN / GRADLE CACHE FILES         
+# ╚════════════════════════════════════════════╝
 .mvn/
 .gradle/
 build/
 
-# Ignore logs
+# ╔════════════════════════════════════════════╗
+# ║                 LOG FILES                  ║
+# ╚════════════════════════════════════════════╝
 *.log
 logs/
 log/
 
-# Ignore OS-specific files
+# ╔════════════════════════════════════════════╗
+# ║            OS-SPECIFIC FILES               ║
+# ╚════════════════════════════════════════════╝
 .DS_Store
 Thumbs.db
 
-# Ignore environment variables & secrets
+# ╔════════════════════════════════════════════╗
+# ║    ENVIRONMENT VARIABLES & SECRETS         ║
+# ╚════════════════════════════════════════════╝
 .env
 *.properties~
 application.properties
@@ -31,11 +43,15 @@ application.yml
 application-dev.properties
 application-prod.properties
 
-# Ignore database files
+# ╔════════════════════════════════════════════╗
+# ║             DATABASE FILES                 ║
+# ╚════════════════════════════════════════════╝
 *.db
 *.sqlite
 *.h2.db
 *.lock.db
 
-# Ignore node_modules if using Node.js later
+# ╔════════════════════════════════════════════╗
+# ║               NODE.JS MODULES              ║
+# ╚════════════════════════════════════════════╝
 node_modules/
