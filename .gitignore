@@ -1,0 +1,41 @@
+# Ignore build files
+target/
+*.jar
+*.war
+*.ear
+
+# Ignore IDE settings
+.idea/
+.vscode/
+*.iml
+
+# Ignore Maven and Gradle cache files
+.mvn/
+.gradle/
+build/
+
+# Ignore logs
+*.log
+logs/
+log/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore environment variables & secrets
+.env
+*.properties~
+application.properties
+application.yml
+application-dev.properties
+application-prod.properties
+
+# Ignore database files
+*.db
+*.sqlite
+*.h2.db
+*.lock.db
+
+# Ignore node_modules if using Node.js later
+node_modules/
