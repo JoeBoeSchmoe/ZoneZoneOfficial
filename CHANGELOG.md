@@ -7,6 +7,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 -  (POST) Create User
 
 
+
+## [1.0.4] - 2025-03-14
+### 🛠 Backend Foundation & Database Setup
+- **Initialized Spring Boot project** in `/backend/` with Maven.
+- **Configured PostgreSQL database** in `application.properties`.
+- **Added Flyway Migration** for database version control.
+- **Created `UserAccount` entity** to store user details.
+- **Implemented `UserAccountRepository`** for database operations.
+- **Established Service Layer** for managing user logic.
+- **Set up `UserAccountController`** to handle REST API requests.
+- **Resolved Maven compilation issues** due to package structure.
+- **Refactored package structure** for cleaner organization:
+  - Moved `UserAccount.java` to `entity/` package.
+  - Updated `UserAccountRepository` to reference the correct entity path.
+- **Verified successful Spring Boot startup** (`mvn spring-boot:run`).
+
+
+
 ## [1.0.3] - 2025-03-14
 ### 🔧 Git Repository Structure Updates
 - Renamed `main` branch to `primary` to enforce a stable main branch.
