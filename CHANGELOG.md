@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
-- Placeholder for upcoming changes.
+-  (POST) Create User
+
+
+## [1.0.2] - 2025-03-14
+### 📝 Documentation Updates
+- Added `CHANGELOG.md` to track all project changes.
+- Formatted changelog according to [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+- Ensured **Semantic Versioning** (`MAJOR.MINOR.PATCH`) is followed.
+
 
 ## [1.0.1] - 2025-03-14
 ### 🎉 Initial Release
