@@ -7,6 +7,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 -  (POST) Create User
 
 
+## [1.0.3] - 2025-03-14
+### 🔧 Git Repository Structure Updates
+- Renamed `main` branch to `primary` to enforce a stable main branch.
+- Created `secondary` branch to act as a staging environment for testing before merging to `primary`.
+- Deleted the old `main` branch locally and ensured `primary` is properly tracked.
+- Configured `secondary` as the base for all future issue branches.
+- Verified upstream tracking for both `primary` and `secondary` to ensure correct synchronization with GitHub.
+
+
 ## [1.0.2] - 2025-03-14
 ### 📝 Documentation Updates
 - Added `CHANGELOG.md` to track all project changes.
@@ -27,6 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added **README.md** and `LICENSE.md`.
 - Established professional `.gitignore` formatting.
 - Ensured repository is clean and structured for expansion.
+
 
 ## [1.0.0] - 2025-03-14
 ### 🛠️ Project Initialization
