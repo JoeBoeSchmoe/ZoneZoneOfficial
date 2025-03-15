@@ -24,9 +24,14 @@ import java.time.Period;
 public class UserAccountModel {
 
     // Constants
+    @Transient
     private static final double XP_SCALING_FACTOR = 1.25;
 
+    @Transient
+    private static final String profilePicturePathDirectory = "/home/joseph/zonezone-server/profilePictures/";
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // ✅ Auto-generate ID
     private Long userAccountID;
 
     // Account Type
@@ -191,8 +196,13 @@ public class UserAccountModel {
         requiredLevelUpXP = 100L;
         gemBalance = 0L;
 
+        profilePicturePath = profilePicturePathDirectory + "default";
+
         totalUserPlayTime = new RecordedTimeModel();
         userSessionPlayTime = new RecordedTimeModel();
+
+        totalUserPlayTime.resetTime();
+        userSessionPlayTime.resetTime();
     }
 
     // Makes A Player Go Online
