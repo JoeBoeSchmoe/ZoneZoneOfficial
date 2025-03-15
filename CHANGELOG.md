@@ -6,10 +6,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 -  (POST) Create User
 
+## [3.0.0] - 2025-03-15
+### Added
+- Implemented `GeneralAccountController` with a `GET /accountUsers/listUsers` endpoint.
+- Created a response format function to structure API responses properly.
+- Added robust error handling and debugging messages for API responses.
+- Integrated Basic Authentication for secure access to account-related endpoints.
+
+### Fixed
+- Addressed 401 Unauthorized issue by ensuring authentication headers are properly handled.
+- Improved logging by replacing `printStackTrace()` with structured logging.
+
+### Notes
+- Next step: Expand controller functionality with more account management features.
 
 
+## [2.0.0] - PostgreSQL Database Setup Complete
+### Added
+- Successfully installed and configured PostgreSQL on AWS EC2.
+- Created a new PostgreSQL database: `zonezonedb`.
+- Set up a new PostgreSQL role: `joseph`, with full privileges.
+- Verified database existence and successful connection.
 
-## [1.0.4] - 2025-03-14
+### Fixed
+- Resolved permission issues preventing PostgreSQL access.
+- Ensured `joseph` can log in and manage `zonezonedb`.
+
+## [1.0.6] - 2025-03-14
 ### Added
 - Set up AWS EC2 instance (`t3.small`) for backend development.
 - Installed and configured PostgreSQL.
@@ -17,7 +40,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Installed Maven for dependency management.
 - Ensured PostgreSQL starts on boot and verified functionality.
 
-## [1.0.4] - 2025-03-14
+## [1.0.5] - 2025-03-14
 ### 🛠 Backend Foundation & Database Setup
 - **Initialized Spring Boot project** in `/backend/` with Maven.
 - **Configured PostgreSQL database** in `application.properties`.
