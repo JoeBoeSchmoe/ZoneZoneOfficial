@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-public class UserAccount {
+public class UserAccountModel {
 
     @Id
     private Long userAccountID;
