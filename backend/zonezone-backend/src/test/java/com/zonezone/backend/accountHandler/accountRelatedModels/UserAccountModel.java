@@ -6,6 +6,7 @@ package com.zonezone.backend.accountHandler.accountRelatedModels;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import net.minidev.json.JSONObject;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -137,7 +138,7 @@ public class UserAccountModel {
             }
         }
         if(userTimeZone == null || userTimeZone.isEmpty()) { // TODO
-            userTimeZone = getSystemTimeZone();
+            userTimeZone = "TODO: Set Through Function";
         }
         if(selectedLanguage == null || selectedLanguage.isEmpty()) {
             if(developerMode) {
@@ -230,7 +231,7 @@ public class UserAccountModel {
         if (userBirthday != null) {
             this.userAge = Period.between(LocalDate.parse(this.userBirthday), LocalDate.now()).getYears();
         }
-        if (this.userAge < 18 && !accountType.equals("Admin")) {
+        if (this.userAge < 18 && this.accountType.compareTo("Admin") != 0) {
             this.accountType = "Limited"; // ✅ Auto-set "Limited" if under 18
         }
     }
@@ -312,8 +313,7 @@ public class UserAccountModel {
         // Ensure at least one game state is true
         int gameOutcomes = (wonGame ? 1 : 0) + (lostGame ? 1 : 0) + (tiedGame ? 1 : 0);
         if (gameOutcomes != 1) {
-            System.err.println("Invalid game result: Exactly one of wonGame, lostGame, or tiedGame must be true.");
-            return; // Avoids crashing if there's a mistake
+            throw new IllegalArgumentException("Exactly one of wonGame, lostGame, or tiedGame must be true.");
         }
 
         // Ensure valid kill and death counts
@@ -376,7 +376,7 @@ public class UserAccountModel {
 
     // Removes Gems From User Balance
     public void removeGemsToBalance(int gemsTaken) {
-        gemBalance = Math.max(0, gemBalance - gemsTaken); // Prevents negative gems
+        gemBalance = gemBalance - gemsTaken;
     }
 
     // Adds Player Experience To An Account
@@ -385,7 +385,7 @@ public class UserAccountModel {
         checkLevelUpThreshold();
     }
 
-    // Checks If Level Up Threshold Is Reached Based    On Current Level XP Count
+    // Checks If Level Up Threshold Is Reached Based On Current Level XP Count
     public void checkLevelUpThreshold() {
         while(currentLevelXP >= requiredLevelUpXP) {
             currentLevelXP = currentLevelXP - requiredLevelUpXP;
@@ -394,6 +394,7 @@ public class UserAccountModel {
         }
 
     }
+
 
     public static boolean isValidTimeZone(String timeZone) {
         return ZoneId.getAvailableZoneIds().contains(timeZone);
@@ -404,13 +405,6 @@ public class UserAccountModel {
         return ZoneId.systemDefault().toString();
     }
 
-    // Sets The Player's Timezone
-    public void setPlayerTimeZone(String givenTimeZone) {
-        if(!isValidTimeZone(givenTimeZone)) {
-            return;
-        }
-        else {
-            userTimeZone = givenTimeZone;
-        }
-    }
+    // Fetch timezone from IP using external API (e.g., ip-api.com)
+
 }
