@@ -4,7 +4,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
--  (POST) Create User
+-  (POST) Delete User
+
+# Changelog
+
+## **[3.1.0] - 2025-03-15**
+### **Fixed**
+- Resolved PostgreSQL authentication failure (`FATAL: password authentication failed for user "joseph"`) by ensuring correct password settings.
+- Implemented environment variables (`DB_PASSWORD`) to dynamically configure database credentials.
+- Refactored `application.properties` to remove hardcoded passwords and improve security.
+- Created `application-local.properties` and `application-prod.properties` to separate local and remote configurations.
+- Ensured PostgreSQL is running and accessible on localhost (`127.0.0.1`) on the remote server.
+- Added restart commands for PostgreSQL and Spring Boot app to apply new configurations.
+
+### **Deployment Steps**
+1. **Ensure PostgreSQL user password is correctly set**
+   ```sql
+   ALTER USER joseph WITH PASSWORD 'your_secure_password';
+
 
 ## [3.0.0] - 2025-03-15
 ### Added
